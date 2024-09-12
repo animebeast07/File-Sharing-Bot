@@ -1,4 +1,4 @@
-import schedule
+import asyncio
 
 def job():
     delete_old_files(DIRECTORY, FILE_LIFETIME_DAYS)
