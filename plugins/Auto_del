@@ -1,0 +1,11 @@
+import schedule
+
+def job():
+    delete_old_files(DIRECTORY, FILE_LIFETIME_DAYS)
+
+schedule.every().day.at("00:030").do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(60)  
+    
