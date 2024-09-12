@@ -6,6 +6,6 @@ def job():
 asyncio.every().day.at("01:00").do(job)
 
 while True:
-    schedule.run_pending()
+    asyncio.run_pending()
     time.sleep(60)  
     
