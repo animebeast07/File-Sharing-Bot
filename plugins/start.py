@@ -124,7 +124,8 @@ async def not_joined(client: Client, message: Message):
         [
             InlineKeyboardButton(
                 "Join Channel",
-                url = client.invitelink)
+                url = client.invitelink),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=client.invitelink2),
         ]
     ]
     try:
@@ -134,9 +135,6 @@ async def not_joined(client: Client, message: Message):
                     text = 'Try Again',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
-                InlineKeyboardButton(
-                    text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", 
-                    url=client.invitelink2)
             ]
         )
     except IndexError:
@@ -156,7 +154,7 @@ async def not_joined(client: Client, message: Message):
     )
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
-async def get_users(client: Bot, message: Message):
+async def gsage):
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
